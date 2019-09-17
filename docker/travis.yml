@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  workspace:
+    build: php
+    working_dir: /app
+    volumes:
+      - ../:/app
+    depends_on:
+      - db
+
+  nginx:
+    image: nginx:1.12-alpine
+    ports:
+      - 80:80
+    volumes:
+      - ../:/app
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
+    depends_on:
+      - workspace
+
+  db:
+    image: mysql:8
+    volumes:
+      - ./mysql/mysql.cnf:/etc/mysql/conf.d/mysql.cnf
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: laravel_test
+      MYSQL_USER: lar_db
+      MYSQL_PASSWORD: lar_pass
