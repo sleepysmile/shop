@@ -1,0 +1,50 @@
+# Env
+/.env
+
+# Composer
+/vendor
+composer.phar
+
+# JS
+node_modules
+spa/npm-debug.log
+npm-debug.log
+spa/yarn-error.log
+
+# IDE
+.idea
+nbproject
+.buildpath
+.project
+.settings
+
+# windows thumbnail cache
+Thumbs.db
+
+# Mac DS_Store Files
+.DS_Store
+
+# phpunit
+phpunit.phar
+/phpunit.xml
+
+# Vagrant
+/.vagrant
+
+# Tests
+tests/codeception/*/_support/_generated/*
+
+# Gallery
+frontend/web/gallery
+backend/uploads
+backend/web/exports
+storage/web/.tmb
+frontend/web/static/img/content
+frontend/image/gallery
+backend/web/assets
+frontend/web/assets
+backend/runtime
+frontend/runtime
+
+# Sitemap
+frontend/web/sitemap*.xml
